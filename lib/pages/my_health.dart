@@ -14,7 +14,6 @@ class MyHealth extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 183, 223, 184),
         title: const Text('My Health'),
       ),
       body: Column(children: [
