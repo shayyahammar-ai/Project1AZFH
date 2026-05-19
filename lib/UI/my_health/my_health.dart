@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:project_azfh/pages/Body_Mass_Index.dart';
-import 'package:project_azfh/pages/Calorie_Calculator.dart';
-import 'package:project_azfh/pages/Medical_Videos.dart';
-import 'package:project_azfh/pages/Pregnancy_Calculator.dart';
-import 'package:project_azfh/pages/medicine_reminder.dart';
-import 'package:project_azfh/pages/menstrual_cycle.dart';
+import 'package:project_azfh/UI/my_health/Body_Mass_Index.dart';
+import 'package:project_azfh/UI/my_health/Calorie_Calculator.dart';
+import 'package:project_azfh/UI/my_health/Medical_Videos.dart';
+import 'package:project_azfh/UI/my_health/Pregnancy_Calculator.dart';
+import 'package:project_azfh/UI/my_health/medicine_reminder.dart';
+import 'package:project_azfh/UI/my_health/menstrual_cycle.dart';
+
 import 'package:project_azfh/widget/custom_card.dart';
 
 class MyHealth extends StatelessWidget {
