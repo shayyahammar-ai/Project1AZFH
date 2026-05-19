@@ -9,13 +9,18 @@ import 'package:project_azfh/UI/home/my_sitting_page.dart';
 import 'package:project_azfh/controller/Theme_Controller.dart';
 import 'package:project_azfh/theme/app_theme.dart';
 
-void main() {
+void main() async{
+ WidgetsFlutterBinding.ensureInitialized();
+
+   await CacheHelper.init();
   Get.put(ThemeController());
-  runApp(const MyApp());
+
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+ MyApp({super.key});
+ 
 
   // This widget is the root of your application.
   @override

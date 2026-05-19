@@ -6,6 +6,7 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:project_azfh/UI/home/favorite_page.dart';
 import 'package:project_azfh/UI/my_health/my_health.dart';
 import 'package:project_azfh/controller/Theme_Controller.dart';
+import 'package:project_azfh/theme/app_theme.dart';
 import 'package:project_azfh/widget/custom_butoom.dart';
 
 class MySittingPage extends StatelessWidget {
@@ -66,6 +67,7 @@ class MySittingPage extends StatelessWidget {
                             value: Get.find<ThemeController>().isDark.value,
                             onChanged: (value) {
                               Get.find<ThemeController>().toggleTheme(value);
+                             
                             },
                           ),
                         ),
