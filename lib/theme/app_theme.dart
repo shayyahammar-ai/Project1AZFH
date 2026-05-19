@@ -9,22 +9,19 @@ class AppTheme {
 elevatedButtonTheme: ElevatedButtonThemeData(
   style: ElevatedButton.styleFrom(
     backgroundColor: Color(0xffADC6FF), // لون الزر في الدارك
-    foregroundColor: Colors.black,      // لون النص
+    foregroundColor: Color.fromARGB(255, 24, 31, 56),
+    // لون النص
     textStyle: const TextStyle(
-      fontSize: 14,
+     fontSize: 14,
       fontWeight: FontWeight.bold,
     ),
-    padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(12),
     ),
   ),
 ),
 
-    // buttonTheme: const ButtonThemeData(
-    //   buttonColor: Color(0xffADC6FF),
-    //   textTheme: ButtonTextTheme.primary,
-    // ),
+
  
   iconTheme: const IconThemeData(color: Color(0xffADC6FF)),
   textTheme: const TextTheme(
@@ -57,10 +54,7 @@ elevatedButtonTheme: ElevatedButtonThemeData(
   ),
 ),
 
-  //  buttonTheme: const ButtonThemeData(
-  //     buttonColor: Color(0xff11AAA8),
-  //     textTheme: ButtonTextTheme.primary,
-  //   ),
+
      badgeTheme: const BadgeThemeData(
       backgroundColor: Color(0xff11AAA8),
       textColor: Colors.white,
