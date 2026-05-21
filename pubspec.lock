@@ -184,14 +184,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.18.0"
-  mime:
-    dependency: transitive
-    description:
-      name: mime
-      sha256: "41a20518f0cb1256669420fdba0cd90d21561e560ac240f26ef8322e45bb7ed6"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.0"
   path:
     dependency: transitive
     description:
@@ -349,14 +341,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.11"
-  typed_data:
-    dependency: transitive
-    description:
-      name: typed_data
-      sha256: f9049c039ebfeb4cf7a7104a675823cd72dba8297f264b6637062516699fa006
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.4.0"
   vector_math:
     dependency: transitive
     description:
