@@ -1,4 +1,5 @@
-import 'package:clinico/Models/Doctor.dart';
+
+import 'package:project_azfh/Models/Doctor.dart';
 
 class Clinic {
 String? name;

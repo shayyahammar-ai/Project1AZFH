@@ -33,6 +33,7 @@ dependencies:
   flutter:
     sdk: flutter
   get: ^4.7.3
+  salomon_bottom_bar: ^3.3.2
   shared_preferences: ^2.5.5
 
 dev_dependencies:

@@ -1,5 +1,6 @@
-import 'package:clinico/Models/Clinic.dart';
-import 'package:clinico/list/doctorList.dart';
+
+import 'package:project_azfh/Models/Clinic.dart';
+import 'package:project_azfh/list/doctorList.dart';
 
 List <Clinic> myClinics=[
 
