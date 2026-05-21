@@ -1,44 +1,53 @@
 import 'package:flutter/material.dart';
 //zahraa
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:project_azfh/UI/home/favorite_page.dart';
+import 'package:project_azfh/UI/home/my_sitting_page.dart';
+import 'package:project_azfh/auth/SplashScreen.dart';
+import 'package:project_azfh/controller/Theme_Controller.dart';
+import 'package:project_azfh/theme/app_theme.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async{
+ WidgetsFlutterBinding.ensureInitialized();
+
+   await CacheHelper.init();
+  Get.put(ThemeController());
+
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+ MyApp({super.key});
+ 
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+     final themeController = Get.find<ThemeController>();
+
+
+    return Obx(() =>GetMaterialApp(
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+       themeMode: themeController.themeMode,
+
+
+
+initialRoute: '/',
+      getPages: [
+   GetPage(     name: '/',  page: () => SplashScreen(),),
+
+      ]
+    ));
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
 
+//ammmmm
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
   // how it looks.
@@ -121,3 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+
+
+//jjjjjj
