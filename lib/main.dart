@@ -6,6 +6,7 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:project_azfh/UI/home/favorite_page.dart';
 import 'package:project_azfh/UI/home/my_sitting_page.dart';
+import 'package:project_azfh/auth/SplashScreen.dart';
 import 'package:project_azfh/controller/Theme_Controller.dart';
 import 'package:project_azfh/theme/app_theme.dart';
 
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
 
 initialRoute: '/',
       getPages: [
-   GetPage(     name: '/',  page: () => MySittingPage(),),
+   GetPage(     name: '/',  page: () => SplashScreen(),),
 
       ]
     ));
@@ -45,4 +46,4 @@ initialRoute: '/',
 }
 
 
-//hi
+//ammmmm
