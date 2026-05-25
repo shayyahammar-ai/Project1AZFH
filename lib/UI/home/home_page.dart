@@ -1,11 +1,12 @@
 import 'dart:math';
 
-import 'package:clinico/list/clinicList.dart';
-import 'package:clinico/list/doctorList.dart';
-import 'package:clinico/list/reminderList.dart';
-import 'package:clinico/widgets/clinicWidget.dart';
-import 'package:clinico/widgets/doctorWidget.dart';
+
 import 'package:flutter/material.dart';
+import 'package:project_azfh/list/clinicList.dart';
+import 'package:project_azfh/list/doctorList.dart';
+import 'package:project_azfh/list/reminderList.dart';
+import 'package:project_azfh/widget/clinicWidget.dart';
+import 'package:project_azfh/widget/doctorWidget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

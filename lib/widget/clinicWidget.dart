@@ -1,5 +1,6 @@
-import 'package:clinico/Models/Clinic.dart';
+
 import 'package:flutter/material.dart';
+import 'package:project_azfh/Models/Clinic.dart';
 
 class ClinicCard extends StatelessWidget {
   final Clinic clinic;
