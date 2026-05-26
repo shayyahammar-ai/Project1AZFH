@@ -1,9 +1,10 @@
-import 'package:clinico/screens/chat.dart';
-import 'package:clinico/screens/favourite.dart';
-import 'package:clinico/screens/home_page.dart';
-import 'package:clinico/screens/medical_info.dart';
-import 'package:clinico/screens/myProfile.dart';
+
 import 'package:flutter/material.dart';
+import 'package:project_azfh/screens/chat.dart';
+import 'package:project_azfh/screens/favourite.dart';
+import 'package:project_azfh/screens/home_page.dart';
+import 'package:project_azfh/screens/medical_info.dart';
+import 'package:project_azfh/screens/myProfile.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
