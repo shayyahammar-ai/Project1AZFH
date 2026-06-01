@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
-import 'package:project_azfh/screens/chat.dart';
-import 'package:project_azfh/screens/favourite.dart';
-import 'package:project_azfh/screens/home_page.dart';
-import 'package:project_azfh/screens/medical_info.dart';
-import 'package:project_azfh/screens/myProfile.dart';
+import 'package:project_azfh/UI/home/medical_info.dart';
+import 'package:project_azfh/UI/home/myProfile.dart';
+import 'package:project_azfh/UI/screens/chat.dart';
+import 'package:project_azfh/UI/screens/favourite.dart';
+import 'package:project_azfh/UI/screens/home_page.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

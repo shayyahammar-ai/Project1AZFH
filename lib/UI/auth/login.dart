@@ -1,8 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:project_azfh/auth/otp.dart';
-import 'package:project_azfh/auth/reges.dart';
-
+import 'package:project_azfh/UI/auth/otp.dart';
+import 'package:project_azfh/UI/auth/reges.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
