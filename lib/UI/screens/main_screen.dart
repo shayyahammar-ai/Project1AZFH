@@ -5,6 +5,7 @@ import 'package:project_azfh/UI/home/favourite.dart';
 import 'package:project_azfh/UI/home/home_page.dart';
 import 'package:project_azfh/UI/home/medical_info.dart';
 import 'package:project_azfh/UI/home/myProfile.dart';
+
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -15,8 +16,7 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
-   final List<Widget> _pages =[
-    const HomePage(),
+   final List<Widget> _pages =[    const HomePage(),
     const MedicalInfo(),
     const Favourite(),
     const MyProfile(),

@@ -5,9 +5,9 @@ import 'package:project_azfh/Models/Doctor.dart';
 
 
 class DoctorCard extends StatelessWidget {
-  final Doctor doctor;
+ 
   const DoctorCard({super.key,
-  required this.doctor});
+ });
 
   @override
   Widget build(BuildContext context) {
@@ -31,16 +31,14 @@ class DoctorCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height: 4,),
-              Text(doctor.name!,
+              Text("Dr.name",
               style: TextStyle(fontSize: 20,
                 fontWeight: FontWeight.bold, color: Colors.white),),
                      
-              Text(doctor.medicalSpecialty!,
+              Text("medicalSpecialty",
               style: TextStyle(color: Colors.grey, fontSize: 10)),
               
-              // Text( doctor.age?.toString()?? "",
-              // style: TextStyle(fontSize: 10,
-              //   fontWeight: FontWeight.bold, color: Colors.grey),),
+              
                      
 
               SizedBox(height: 55,),
@@ -48,7 +46,7 @@ class DoctorCard extends StatelessWidget {
                 children: 
                  List.generate(5, 
                  (index)=> Icon(
-                  index < doctor.rating!
+                  index < 5
                   ?Icons.star : Icons.star_border,
                   color: Colors.amber,
                   size: 16,
@@ -61,7 +59,7 @@ class DoctorCard extends StatelessWidget {
               ]),
                CircleAvatar(
                radius: 60,
-                backgroundImage: AssetImage(doctor.asset!),),
+                backgroundImage: AssetImage(''),),
               
             ],
           ),

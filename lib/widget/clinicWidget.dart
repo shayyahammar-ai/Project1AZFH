@@ -1,11 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:project_azfh/Models/Clinic.dart';
 
 class ClinicCard extends StatelessWidget {
-  final Clinic clinic;
   
-  const ClinicCard({super.key, required this.clinic});
+  
+  const ClinicCard({super.key, });
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,7 @@ class ClinicCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
-                clinic.name!,
+                "Clinic name",
               style: TextStyle(color:Colors.white,
               fontWeight: FontWeight.bold,fontSize: 12),),
                SizedBox(height:20 ,),
@@ -36,7 +35,7 @@ class ClinicCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Icon(Icons.people,color: Colors.grey,size: 14,),
-                Text( '${clinic.doctors.length} Doctors', 
+                Text( 'number', 
                 style: TextStyle(color: Colors.grey, fontSize: 12),),
               ],
             )

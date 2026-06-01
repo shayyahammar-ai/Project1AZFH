@@ -95,9 +95,9 @@ class _HomePageState extends State<HomePage> {
             
             shrinkWrap: true,
                scrollDirection: Axis.horizontal,
-                 itemCount: doctors.length,
+                 itemCount:3,
                  itemBuilder: (context, index){
-                  return DoctorCard(doctor: doctors[index]);
+                  return DoctorCard();
                  }
 
               ),
@@ -150,9 +150,9 @@ class _HomePageState extends State<HomePage> {
             SliverGridDelegateWithFixedCrossAxisCount(
              crossAxisCount: 3,crossAxisSpacing: 10,mainAxisSpacing: 10,
               childAspectRatio: 0.8),
-            itemCount: myClinics.length,
+            itemCount: 10,
            itemBuilder: (context,index){
-           return ClinicCard(clinic: myClinics[index],);
+           return ClinicCard();
          
            }),
             
