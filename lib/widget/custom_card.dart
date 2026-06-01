@@ -37,7 +37,7 @@ class custumCard extends StatelessWidget {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                       Image.network(image, height: 35, width: 35),
+                       Image.asset(image, height: 35, width: 75),
                        SizedBox(height: 10),
                         Text(
                           title,
