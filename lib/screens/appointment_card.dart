@@ -1,5 +1,5 @@
+import 'package:clinico/screens/doctors.dart';
 import 'package:flutter/material.dart';
-import 'package:project_azfh/screens/doctors.dart';
 
 class AppointmentCard extends StatelessWidget {
    const AppointmentCard({super.key, required this.hasAppointment});
