@@ -1,5 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:project_azfh/UI/auth/otp.dart';
 import 'package:project_azfh/UI/auth/reges.dart';
 
@@ -255,7 +257,9 @@ class _LoginScreenState extends State<LoginScreen> {
               borderRadius: BorderRadius.circular(18),
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+           // Get.to(Sitt);
+          },
           child: const Text(
             "LOGIN",
             style: TextStyle(

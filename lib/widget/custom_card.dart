@@ -22,7 +22,7 @@ class custumCard extends StatelessWidget {
             height: 120,
             width: 120,
             child: Card(
-              elevation: 10,
+              elevation: 12,
               //color: Colors.red,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
@@ -37,7 +37,7 @@ class custumCard extends StatelessWidget {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                       Image.asset(image, height: 35, width: 75),
+                       Image.asset(image, height: 35, width: 60,),
                        SizedBox(height: 10),
                         Text(
                           title,

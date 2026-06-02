@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
 
 initialRoute: '/',
       getPages: [
-   GetPage(     name: '/',  page: () => MyHealth(),),
+   GetPage(     name: '/',  page: () => SplashScreen(),),
 
       ]
     ));
@@ -47,4 +47,4 @@ initialRoute: '/',
 
 
 //ammmmm
-  
+  //merge with hawraa
