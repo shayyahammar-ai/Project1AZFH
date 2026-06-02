@@ -5,8 +5,8 @@ import 'package:project_azfh/my_health/QR_scan.dart';
 import 'package:project_azfh/my_health/Scientific_encyclopedia.dart';
 import 'package:project_azfh/my_health/medicine_reminder.dart';
 import 'package:project_azfh/my_health/pregnancy_calculator.dart';
-import 'package:project_azfh/my_health/body_mass_index.dart'; 
-import 'package:project_azfh/widget/custom_card.dart';
+import 'package:project_azfh/my_health/body_mass_index.dart';
+import 'package:project_azfh/widgets/custom_card.dart'; 
 
 class MyHealth extends StatelessWidget {
   const MyHealth({super.key});

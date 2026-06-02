@@ -45,6 +45,7 @@ dev_dependencies:
   flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
+  salomon_bottom_bar: ^3.3.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -59,6 +60,9 @@ flutter:
   assets:
     - assets/
 
+      - assets/istockphoto-1021815008-612x612.jpg
+      - assets/istockphoto-1325741155-612x612.jpg
+      - assets/istockphoto-1399518417-612x612.jpg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
