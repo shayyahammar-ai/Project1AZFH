@@ -14,11 +14,13 @@ class DoctorCard extends StatelessWidget {
       padding: const EdgeInsets.only(left: 20,right:15, top: 16),
       child: Container(
         width: 250, 
+        height: 160,
         decoration: BoxDecoration( 
         color:const Color.fromARGB(255, 2, 33, 47),
           borderRadius: BorderRadius.circular(20),
           boxShadow:[ BoxShadow(
-           blurRadius: 4,
+           blurRadius: 2,
+           spreadRadius: 0,
            color: Colors.black
           )],
           ),   
@@ -57,7 +59,7 @@ class DoctorCard extends StatelessWidget {
               
               ]),
                CircleAvatar(
-               radius: 60,
+               radius: 45,
                 backgroundImage: AssetImage(''),),
               
             ],

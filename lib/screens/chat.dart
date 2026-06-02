@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project_azfh/widgets/chatwidget.dart';
 
 class Chat extends StatelessWidget {
   const Chat({super.key});
@@ -11,12 +11,13 @@ class Chat extends StatelessWidget {
     backgroundColor:Colors.white,
      appBar: AppBar(
       shadowColor: Colors.black,
-      backgroundColor: const Color.fromARGB(255, 2, 33, 47),
-      title: Text("Clinico", style: TextStyle(color: Colors.white)),
+      backgroundColor:Color.fromARGB(255, 6, 79, 73),
+      title: Text("Chat", style: TextStyle(color: Colors.white)),
       ),
       body: ListView(
            children: [
-            Text('DR.Ahmad')
+           ChatCard(),
+           ChatCard()
            ],
       ),
     );
