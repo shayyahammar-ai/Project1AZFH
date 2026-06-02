@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_azfh/auth/login.dart';
+import 'package:project_azfh/UI/auth/login.dart';
 
 
 class OnboardingScreen extends StatefulWidget {
