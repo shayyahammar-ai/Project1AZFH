@@ -7,6 +7,7 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:project_azfh/UI/auth/SplashScreen.dart';
 
 import 'package:project_azfh/controller/Theme_Controller.dart';
+import 'package:project_azfh/my_health/my_health.dart';
 import 'package:project_azfh/theme/app_theme.dart';
 
 void main() async{
@@ -46,4 +47,4 @@ initialRoute: '/',
 
 
 //ammmmm
-  
+  //merge with hawraa
