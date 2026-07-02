@@ -1,5 +1,5 @@
-import 'package:clinico/widgets/chatwidget.dart';
 import 'package:flutter/material.dart';
+import 'package:project_azfh/widgets/chatwidget.dart';
 
 class Chat extends StatelessWidget {
   const Chat({super.key});
@@ -23,4 +23,5 @@ class Chat extends StatelessWidget {
     );
   }
 }
-
+//
+//

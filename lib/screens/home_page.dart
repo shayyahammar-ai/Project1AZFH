@@ -1,11 +1,9 @@
-import 'dart:math';
-import 'package:clinico/list/imagelist.dart';
-import 'package:clinico/list/reminderlist.dart';
-import 'package:clinico/screens/appointment_card.dart';
-import 'package:clinico/screens/doctors.dart';
-import 'package:clinico/widgets/clinicwidget.dart';
-import 'package:clinico/widgets/doctorwidget.dart';
 import 'package:flutter/material.dart';
+import 'package:project_azfh/list/imagelist.dart';
+import 'package:project_azfh/screens/appointment_card.dart';
+import 'package:project_azfh/screens/doctors.dart';
+import 'package:project_azfh/widgets/clinicwidget.dart';
+import 'package:project_azfh/widgets/doctorwidget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -20,8 +18,8 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    randomReminder =
-        medicalReminders[Random().nextInt(medicalReminders.length)];
+    // randomReminder =
+    //     medicalReminders[Random().nextInt(medicalReminders.length)];
   }
 
   Widget build(BuildContext context) {

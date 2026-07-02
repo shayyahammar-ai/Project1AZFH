@@ -1,6 +1,7 @@
-import 'package:clinico/widgets/clinicwidget2.dart';
-import 'package:clinico/widgets/doctorwidget.dart';
+
 import 'package:flutter/material.dart';
+import 'package:project_azfh/widgets/clinicwidget2.dart';
+import 'package:project_azfh/widgets/doctorwidget.dart';
 
 class Doctors extends StatelessWidget {
   const Doctors({super.key});
