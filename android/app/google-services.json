@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "759191366726",
+    "project_id": "clinco-12950",
+    "storage_bucket": "clinco-12950.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759191366726:android:fec98cb75ea67e0fe1ee47",
+        "android_client_info": {
+          "package_name": "com.example.project_azfh"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2j4UCM5wadopUKY6UFWdfpF3IcnLjS3E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

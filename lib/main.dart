@@ -5,44 +5,58 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:project_azfh/UI/auth/SplashScreen.dart';
-
 import 'package:project_azfh/controller/Theme_Controller.dart';
 import 'package:project_azfh/my_health/my_health.dart';
 import 'package:project_azfh/screens/chat_AI.dart';
 import 'package:project_azfh/theme/app_theme.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
-void main() async{
- WidgetsFlutterBinding.ensureInitialized();
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  print('on bachground💜💜💜💜💜💜 message');
+  print(message.data.toString());
+}
 
-   await CacheHelper.init();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  //here tokenn to bashar
+  var token = await FirebaseMessaging.instance.getToken();
+  print("Firebase Messaging ❤️Token: $token");
+
+  //forground
+  FirebaseMessaging.onMessage.listen((event) {
+    print(event.data.toString());
+  });
+  FirebaseMessaging.onMessageOpenedApp.listen((event) {
+    print(event.data.toString());
+  });
+
+  await CacheHelper.init();
   Get.put(ThemeController());
 
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
- MyApp({super.key});
- 
+  MyApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-     final themeController = Get.find<ThemeController>();
+    final themeController = Get.find<ThemeController>();
 
+    return Obx(
+      () => GetMaterialApp(
+        theme: AppTheme.lightTheme,
+        darkTheme: AppTheme.darkTheme,
+        themeMode: themeController.themeMode,
 
-    return Obx(() =>GetMaterialApp(
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-       themeMode: themeController.themeMode,
-
-
-
-initialRoute: '/',
-      getPages: [
-   GetPage(     name: '/',  page: () => ChatAi(),),
-
-      ]
-    ));
+        initialRoute: '/',
+        getPages: [GetPage(name: '/', page: () => ChatAi())],
+      ),
+    );
   }
 }
 
