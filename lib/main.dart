@@ -4,6 +4,7 @@ import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:project_azfh/Notification/notification_all_stutus.dart';
 import 'package:project_azfh/UI/auth/SplashScreen.dart';
 import 'package:project_azfh/controller/Theme_Controller.dart';
 import 'package:project_azfh/my_health/my_health.dart';
@@ -13,25 +14,38 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
-Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  print('on bachground💜💜💜💜💜💜 message');
-  print(message.data.toString());
-}
+// Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+//   print('on bachground💜💜💜💜💜💜 message');
+//   print(message.data.toString());
+// }
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+await FirebaseNotifications.initializeFirebase();
+// // 1. طلب صلاحية إرسال الإشعارات (مهم جداً للأندرويد 13 فما فوق)
+//   await FirebaseMessaging.instance.requestPermission(
+//     alert: true,
+//     badge: true,
+//     sound: true,
+//   );
+
+//   // 2. تفعيل الاستماع للإشعارات في الخلفية (السطر الذي كان ناقصاً)
+//   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+
+
+
   //here tokenn to bashar
   var token = await FirebaseMessaging.instance.getToken();
   print("Firebase Messaging ❤️Token: $token");
 
-  //forground
-  FirebaseMessaging.onMessage.listen((event) {
-    print(event.data.toString());
-  });
-  FirebaseMessaging.onMessageOpenedApp.listen((event) {
-    print(event.data.toString());
-  });
+  // //forground
+  // FirebaseMessaging.onMessage.listen((event) {
+  //   print(event.data.toString());
+  // });
+  // FirebaseMessaging.onMessageOpenedApp.listen((event) {
+  //   print(event.data.toString());
+  // });
 
   await CacheHelper.init();
   Get.put(ThemeController());
@@ -54,7 +68,7 @@ class MyApp extends StatelessWidget {
         themeMode: themeController.themeMode,
 
         initialRoute: '/',
-        getPages: [GetPage(name: '/', page: () => ChatAi())],
+        getPages: [GetPage(name: '/', page: () => SplashScreen())],
       ),
     );
   }

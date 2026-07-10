@@ -1,18 +1,23 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_notifier.dart';
 import 'package:project_azfh/UI/auth/otp.dart';
 import 'package:project_azfh/UI/auth/reges.dart';
+import 'package:project_azfh/controller/ammar_login.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+  LoginScreen({super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final controller = Get.put(LoginController());
+
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   bool obscurePassword = true;
@@ -30,7 +35,6 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             Stack(
               children: [
-
                 Container(
                   height: size.height * 0.45,
                   width: double.infinity,
@@ -38,8 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     image: DecorationImage(
                       image: AssetImage("assets/ph6.png"),
                       fit: BoxFit.cover,
-                      alignment:
-                          Alignment.topCenter, 
+                      alignment: Alignment.topCenter,
                     ),
                   ),
                   child: Container(
@@ -57,20 +60,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
 
-               
                 Padding(
-                  padding: EdgeInsets.only(
-                    top: size.height * 0.38,
-                  ),
+                  padding: EdgeInsets.only(top: size.height * 0.38),
                   child: Container(
                     width: double.infinity,
                     margin: const EdgeInsets.symmetric(horizontal: 20),
                     padding: const EdgeInsets.all(28),
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(
-                        35,
-                      ), 
+                      borderRadius: BorderRadius.circular(35),
 
                       boxShadow: [
                         BoxShadow(
@@ -98,7 +96,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         const SizedBox(height: 35),
 
-                     
                         _inputLabel("Email Address"),
                         const SizedBox(height: 10),
                         _customTextField(
@@ -108,6 +105,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               "Enter your email",
                               Icons.email_outlined,
                             ),
+                            onChanged: (value) {
+                              controller.email.value = value;
+                            },
                           ),
                         ),
 
@@ -117,6 +117,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         const SizedBox(height: 10),
                         _customTextField(
                           child: TextField(
+                            onChanged: (value) {
+                              controller.password.value = value ;
+                            },
                             controller: passwordController,
                             obscureText: obscurePassword,
                             decoration:
@@ -145,9 +148,13 @@ class _LoginScreenState extends State<LoginScreen> {
                           alignment: Alignment.centerRight,
                           child: TextButton(
                             onPressed: () {
-                                 Navigator.push(
-                                        context,
-                                     MaterialPageRoute(builder: (_) => OTPScreen(email: emailController.text),),);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) =>
+                                      OTPScreen(email: emailController.text),
+                                ),
+                              );
                             },
                             child: const Text(
                               "Forgot Password?",
@@ -202,6 +209,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+
   Widget _inputLabel(String label) {
     return Text(
       label,
@@ -212,6 +220,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+
   Widget _customTextField({required Widget child}) {
     return Container(
       decoration: BoxDecoration(
@@ -224,6 +233,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+
   InputDecoration _inputDecoration(String hint, IconData icon) {
     return InputDecoration(
       hintText: hint,
@@ -233,6 +243,7 @@ class _LoginScreenState extends State<LoginScreen> {
       contentPadding: const EdgeInsets.symmetric(vertical: 18),
     );
   }
+
   Widget _loginButton() {
     return SizedBox(
       width: double.infinity,
@@ -258,7 +269,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           onPressed: () {
-           // Get.to(Sitt);
+            controller.loginFuture();
           },
           child: const Text(
             "LOGIN",

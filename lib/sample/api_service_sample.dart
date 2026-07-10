@@ -48,7 +48,7 @@ class ApiServiceSample {
 
   ApiServiceSample._() {
     _options = dio.BaseOptions(
-      baseUrl: 'http://127.0.0.1:8000/api',
+      baseUrl: 'https://api-shayyah.abukm.com/api',
       connectTimeout: Duration(seconds: 60),
       receiveTimeout: Duration(seconds: 60),
       headers: {
