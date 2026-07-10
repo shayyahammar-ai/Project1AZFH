@@ -14,24 +14,24 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
-// Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-//   print('on bachground💜💜💜💜💜💜 message');
-//   print(message.data.toString());
-// }
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  print('on bachground💜💜💜💜💜💜 message');
+  print(message.data.toString());
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-await FirebaseNotifications.initializeFirebase();
-// // 1. طلب صلاحية إرسال الإشعارات (مهم جداً للأندرويد 13 فما فوق)
-//   await FirebaseMessaging.instance.requestPermission(
-//     alert: true,
-//     badge: true,
-//     sound: true,
-//   );
+//await FirebaseNotifications.initializeFirebase();استدعاء تبع ابو كم ما اشتغل 
+// 1. طلب صلاحية إرسال الإشعارات (مهم جداً للأندرويد 13 فما فوق)
+  await FirebaseMessaging.instance.requestPermission(
+    alert: true,
+    badge: true,
+    sound: true,
+  );
 
-//   // 2. تفعيل الاستماع للإشعارات في الخلفية (السطر الذي كان ناقصاً)
-//   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  // 2. تفعيل الاستماع للإشعارات في الخلفية (السطر الذي كان ناقصاً)
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
 
 
@@ -39,13 +39,13 @@ await FirebaseNotifications.initializeFirebase();
   var token = await FirebaseMessaging.instance.getToken();
   print("Firebase Messaging ❤️Token: $token");
 
-  // //forground
-  // FirebaseMessaging.onMessage.listen((event) {
-  //   print(event.data.toString());
-  // });
-  // FirebaseMessaging.onMessageOpenedApp.listen((event) {
-  //   print(event.data.toString());
-  // });
+  //forground
+  FirebaseMessaging.onMessage.listen((event) {
+    print(event.data.toString());
+  });
+  FirebaseMessaging.onMessageOpenedApp.listen((event) {
+    print(event.data.toString());
+  });
 
   await CacheHelper.init();
   Get.put(ThemeController());
