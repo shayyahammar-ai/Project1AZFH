@@ -1,5 +1,3 @@
-
-
 //الشغال
 import 'package:dio/dio.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -7,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:project_azfh/sample/api_service_sample.dart';
 import 'package:project_azfh/screens/chat_AI.dart';
 //import 'package:flutterapp2/models/models.dart';
-
 
 class LoginController extends GetxController {
   var password = ''.obs;
@@ -21,43 +18,42 @@ class LoginController extends GetxController {
     final result = await ApiServiceSample.instance.makeRequest(
       method: ApiMethodSample.post,
       endPoint: '/login',
-      body: {
-        "password": password.value,
-        "email": email.value,
-      },
+      body: {"password": password.value, "email": email.value},
     );
     result.fold(
       (left) {
         loginStatus.value = ControllerStatus.error;
         Get.snackbar("Error", left ?? "Login failed");
       },
-      (right) {
+      (right) async {
         loginStatus.value = ControllerStatus.loaded;
+        String? userAuthToken = right['Token'];
 
-        // نجاح تسجيل الدخول → ننتقل لصفحة OTP
-      //  Get.to(() => OtpPage());
-      Get.to(() => ChatAi(),);
+        if (userAuthToken != null) {
+          await _sendDeviceTokenToBackend(userAuthToken);
+        }
 
+        Get.to(() => ChatAi());
       },
     );
   }
 
-// الدالة المساعدة لإرسال توكن الإشعارات (وضعنا قبلها _ لتكون Private)
+  // الدالة المساعدة لإرسال توكن الإشعارات (وضعنا قبلها _ لتكون Private)
   Future<void> _sendDeviceTokenToBackend(String userAuthToken) async {
     try {
       String? fcmToken = await FirebaseMessaging.instance.getToken();
-      
+
       if (fcmToken != null) {
         var response = await Dio().post(
           'https://api-shayyah.abukm.com/api/device-token', // 🔴 رابط بشار لحفظ التوكن
-          data: {
-            'device_token': fcmToken,
-          },
+          data: {'token': fcmToken},
           options: Options(
             headers: {
-              'Authorization': 'Bearer $userAuthToken', 
-            },
-          ),
+              'Authorization': 'Bearer $userAuthToken',
+              'Accept': 'application/json',
+              }
+            
+            ),
         );
 
         if (response.statusCode == 200) {
@@ -65,10 +61,12 @@ class LoginController extends GetxController {
         }
       }
     } catch (error) {
-      print('❌ حدث خطأ أثناء إرسال التوكن: $error');
+      if (error is DioException) {
+        // هذا السطر سيطبع لك الرد القادم من Laravel بالتفصيل (سيخبرك ما هو الحقل الناقص أو الخاطئ)
+        print('❌ خطأ التحقق من الباك إند: ${error.response?.data}');
+      } else {
+        print('❌ حدث خطأ عام: $error');
+      }
     }
   }
-
-
-
 }
