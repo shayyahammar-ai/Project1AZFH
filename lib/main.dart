@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart'; // 🔴 استدعاء واحد يغني عن كل الأسطر الطويلة
 import 'package:project_azfh/Notification/firebase_messaging_service.dart';
-import 'package:project_azfh/UI/auth/SplashScreen.dart';
 import 'package:project_azfh/controller/Theme_Controller.dart';
 import 'package:project_azfh/my_health/my_health.dart';
+import 'package:project_azfh/screens/chat_AI.dart';
 import 'package:project_azfh/screens/notification_screen.dart';
 import 'package:project_azfh/theme/app_theme.dart';
 
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         themeMode: themeController.themeMode,
 
         initialRoute: '/',
-        getPages: [GetPage(name: '/', page: () => NotificationScreen())],
+        getPages: [GetPage(name: '/', page: () => ChatAi())],
       ),
     );
   }
